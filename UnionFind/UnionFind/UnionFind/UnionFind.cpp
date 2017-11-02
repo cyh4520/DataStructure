@@ -6,7 +6,7 @@
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	int n = 6;
+	int n = 10;
 	uf u(n);
 	/*u.Union(0, 1);
 	u.Union(2, 1);

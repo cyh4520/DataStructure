@@ -34,6 +34,14 @@ public:
 		if (p != id[p])
 		return Find(id[p]);
 		return p;
+		//下面这个就是路径压缩的，但是一次只能压缩一个点的路径，个人觉得效果并不如权重的效果好。
+		/*while (p != id[p])
+		{
+			// 将p节点的父节点设置为它的爷爷节点  
+			id[p] = id[id[p]];
+			p = id[p];
+		}
+		return p;*/
 	}
 	//联通这两个点
 	void Union(int p, int q)
