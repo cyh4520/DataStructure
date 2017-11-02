@@ -22,7 +22,10 @@ public:
 	//查找这个点所在的组号
 	int Find(int p)
 	{
-		return id[p];
+		//根节点具有id[root]=root的性质
+		if (p != id[p])
+		return Find(id[p]);
+		return p;
 	}
 	//联通这两个点
 	void Union(int p, int q)
@@ -32,9 +35,10 @@ public:
 		{
 			int pId = Find(p);
 			int qId = Find(q);
-			for (int i = 0; i < length;i++)
+			/*for (int i = 0; i < length;i++)
 			if (id[i] == pId)
-				id[i] = qId;
+				id[i] = qId;*/
+			id[pId] = qId;
 			count--;
 		}
 		
